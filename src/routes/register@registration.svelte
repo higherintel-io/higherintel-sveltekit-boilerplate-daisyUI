@@ -1,13 +1,9 @@
-<script context="module">
-	console.log(process.env);
-</script>
-
 <script>
 	const registrationFields = [
 		{
 			key: 'firstName',
 			label: 'First Name',
-			value: '',
+			value: 'User',
 			error: '',
 			valid: false,
 			touched: false
@@ -15,7 +11,7 @@
 		{
 			key: 'lastName',
 			label: 'Last Name',
-			value: '',
+			value: 'Name',
 			error: '',
 			valid: false,
 			touched: false
@@ -23,7 +19,7 @@
 		{
 			key: 'email',
 			label: 'Email',
-			value: '',
+			value: 'qdhenry@gmail.com',
 			error: '',
 			valid: false,
 			touched: false
@@ -31,7 +27,7 @@
 		{
 			key: 'password',
 			label: 'Password',
-			value: '',
+			value: 'commerce1',
 			error: '',
 			valid: false,
 			touched: false
@@ -39,7 +35,7 @@
 		{
 			key: 'confirmPassword',
 			label: 'Confirm Password',
-			value: '',
+			value: 'commerce1',
 			error: '',
 			valid: false,
 			touched: false
@@ -50,13 +46,13 @@
 <div class="flex bg-secondary text-white p-4">
 	<h1 class="font-black mb-3 text-3xl">New User Registration</h1>
 </div>
-<form class="p-4">
+<form class="p-4" method="post" action="/api/register">
 	{#each registrationFields as field, index}
 		<div class="form-control  w-full flex py-3">
 			<label for="first name" class="pb-2 font-bold">{field.label}</label>
 			<input
 				type="text"
-				name={field.label}
+				name={field.key}
 				bind:value={field.value}
 				placeholder="Enter your {field.label}"
 				class="input input-lg bg-gray-100 shadow-md h-14"
@@ -64,6 +60,6 @@
 		</div>
 	{/each}
 	<div class="flex py-4">
-		<button class="btn btn-primary w-full h-16">Register</button>
+		<button type="submit" class="btn btn-primary w-full h-16">Register</button>
 	</div>
 </form>

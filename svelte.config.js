@@ -4,6 +4,9 @@ import path from 'path';
 const config = {
 	kit: {
 		adapter: adapter(),
+		methodOverride: {
+			allowed: ['POST', 'PUT', 'PATCH', 'DELETE']
+		},
 		vite: {
 			define: {
 				'process.env': process.env
@@ -11,7 +14,9 @@ const config = {
 			resolve: {
 				alias: {
 					'@components': path.resolve('./src/lib/components'),
-					'@lib': path.resolve('./src/lib/*')
+					'@lib': path.resolve('./src/lib/*'),
+					'@api': path.resolve('./src/api/*'),
+					'@utils': path.resolve('./src/utils/*')
 				}
 			}
 		}

@@ -9,7 +9,7 @@
 				<div class="flex-shrink-0 flex items-center">
 					<a href="/">
 						<img
-							class="block h-8 w-auto"
+							class="block h-8 w-auto max-w-[50px]"
 							src="https://tailwindui.com/img/logos/workflow-mark.svg?color=black&shade=500"
 							alt="Workflow"
 						/>

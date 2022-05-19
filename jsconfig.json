@@ -13,9 +13,13 @@
 		"paths": {
 			"@components": ["src/lib/components"],
 			"@components/*": ["src/lib/components/*"],
+			"@utils/*": ["src/utils/*"],
+			"@utils": ["src/utils"],
+			"@api": ["src/api"],
+			"@api/*": ["src/api/*"],
 			"@lib": ["src/lib"],
 			"@lib/*": ["src/lib/*"]
 		}
 	},
-	"include": ["src/**/*.d.ts", "src/**/*.js", "src/**/*.svelte"]
+	"include": ["src/**/*.d.ts", "src/**/*.js", "src/**/*.svelte", "src/api/strapi.ts"]
 }
