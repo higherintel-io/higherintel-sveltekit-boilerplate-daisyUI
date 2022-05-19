@@ -5,6 +5,9 @@ const config = {
 	kit: {
 		adapter: adapter(),
 		vite: {
+			define: {
+				'process.env': process.env
+			},
 			resolve: {
 				alias: {
 					'@components': path.resolve('./src/lib/components'),
