@@ -10,15 +10,9 @@ async function parseResponse(res) {
 	// If a body response exists, parse anx extract the possible properties
 	if (!res.ok) {
 		const errorBody = await res.text();
-
 		const data = JSON.parse(errorBody);
-
-		// eslint-disable-next-line no-debugger
-		debugger;
 		if (data.error) {
-			throw new Error(JSON.stringify(errorBody.error));
-		} else {
-			throw new Error(errorBody.error);
+			throw new Error(data.error.message);
 		}
 	}
 	return res.json();

@@ -11,7 +11,6 @@ export const strapiClient = {
 			method: 'POST',
 			body: { username: registrationData.email, ...registrationData }
 		});
-		console.log(response);
-		debugger;
+		return response;
 	}
 };

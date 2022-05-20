@@ -1,4 +1,7 @@
 <script>
+	import { onMount } from 'svelte';
+	import { session } from '$app/stores';
+	let errorMessage = '';
 	const registrationFields = [
 		{
 			key: 'firstName',
@@ -41,9 +44,16 @@
 			touched: false
 		}
 	];
+
+	onMount(() => {
+		if ($session.errorMessage) {
+			errorMessage = $session.errorMessage;
+		}
+	});
 </script>
 
 <div class="flex bg-secondary text-white p-4">
+	{JSON.stringify(errorMessage)}
 	<h1 class="font-black mb-3 text-3xl">New User Registration</h1>
 </div>
 <form class="p-4" method="post" action="/api/register">
